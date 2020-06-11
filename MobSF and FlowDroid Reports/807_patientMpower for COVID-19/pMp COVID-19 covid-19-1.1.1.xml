@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFlowResults FileFormatVersion="102" TerminationState="Success">
+    <Results>
+        <Result>
+            <Sink Statement="specialinvoke $r0.&lt;androidx.activity.ComponentActivity: void startActivityForResult(android.content.Intent,int)&gt;($r1, $i0)" Method="&lt;androidx.fragment.app.FragmentActivity: void startActivityForResult(android.content.Intent,int)&gt;">
+                <AccessPath Value="$r0" Type="com.maithu.transplantbuddy.my_data.data_report.ReportPreviewActivity" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;androidx.appcompat.app.AppCompatActivity: androidx.appcompat.app.AppCompatDelegate mDelegate&gt;" Type="androidx.appcompat.app.AppCompatDelegateImpl"></Field>
+                        <Field Value="&lt;androidx.appcompat.app.AppCompatDelegateImpl: androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager mAutoBatteryNightModeManager&gt;" Type="androidx.appcompat.app.AppCompatDelegateImpl$AutoTimeNightModeManager"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r5.&lt;android.content.Context: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)&gt;($r1, $r2)" Method="&lt;androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager: void setup()&gt;">
+                <AccessPath Value="$r1" Type="android.content.BroadcastReceiver" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r0.&lt;com.maithu.transplantbuddy.BaseActivity: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)&gt;($r1, $r0, 1)" Method="&lt;com.maithu.transplantbuddy.BaseActivity: void onResume()&gt;">
+                <AccessPath Value="$r0" Type="com.maithu.transplantbuddy.my_data.data_report.ReportPreviewActivity" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;androidx.appcompat.app.AppCompatActivity: androidx.appcompat.app.AppCompatDelegate mDelegate&gt;" Type="androidx.appcompat.app.AppCompatDelegateImpl"></Field>
+                        <Field Value="&lt;androidx.appcompat.app.AppCompatDelegateImpl: androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager mAutoBatteryNightModeManager&gt;" Type="androidx.appcompat.app.AppCompatDelegateImpl$AutoTimeNightModeManager"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+    </Results>
+    <PerformanceData>
+        <PerformanceEntry Name="CallgraphConstructionSeconds" Value="163"></PerformanceEntry>
+        <PerformanceEntry Name="TaintPropagationSeconds" Value="1290"></PerformanceEntry>
+        <PerformanceEntry Name="PathReconstructionSeconds" Value="23"></PerformanceEntry>
+        <PerformanceEntry Name="TotalRuntimeSeconds" Value="1486"></PerformanceEntry>
+        <PerformanceEntry Name="MaxMemoryConsumption" Value="331"></PerformanceEntry>
+        <PerformanceEntry Name="SourceCount" Value="7"></PerformanceEntry>
+        <PerformanceEntry Name="SinkCount" Value="185"></PerformanceEntry>
+    </PerformanceData>
+</DataFlowResults>

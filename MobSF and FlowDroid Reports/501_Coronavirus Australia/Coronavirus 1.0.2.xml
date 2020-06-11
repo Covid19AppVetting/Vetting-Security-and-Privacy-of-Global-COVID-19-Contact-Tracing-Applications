@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFlowResults FileFormatVersion="102" TerminationState="Success">
+    <Results>
+        <Result>
+            <!-- <Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String)&gt;(&quot;FragmentManager&quot;, $r3)" Method="&lt;androidx.fragment.app.FragmentManager: void moveFragmentToExpectedState(androidx.fragment.app.Fragment)&gt;">
+                <AccessPath Value="$r3" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources> -->
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r2.&lt;android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)&gt;($r8, $r3)" Method="&lt;androidx.savedstate.SavedStateRegistry: void performSave(android.os.Bundle)&gt;">
+                <AccessPath Value="$r2" Type="android.os.Bundle" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+    </Results>
+    <PerformanceData>
+        <PerformanceEntry Name="CallgraphConstructionSeconds" Value="76"></PerformanceEntry>
+        <PerformanceEntry Name="TaintPropagationSeconds" Value="991"></PerformanceEntry>
+        <PerformanceEntry Name="PathReconstructionSeconds" Value="238"></PerformanceEntry>
+        <PerformanceEntry Name="TotalRuntimeSeconds" Value="1341"></PerformanceEntry>
+        <PerformanceEntry Name="MaxMemoryConsumption" Value="1551"></PerformanceEntry>
+        <PerformanceEntry Name="SourceCount" Value="7"></PerformanceEntry>
+        <PerformanceEntry Name="SinkCount" Value="89"></PerformanceEntry>
+    </PerformanceData>
+</DataFlowResults>

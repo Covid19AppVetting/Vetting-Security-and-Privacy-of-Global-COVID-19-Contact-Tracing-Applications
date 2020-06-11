@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFlowResults FileFormatVersion="102" TerminationState="Success">
+    <Results>
+        <Result>
+            <Sink Statement="$r3 = virtualinvoke $r2.&lt;java.net.URLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;com.onesignal.GenerateNotification: android.graphics.Bitmap getBitmapFromURL(java.lang.String)&gt;">
+                <AccessPath Value="$r2" Type="java.net.URLConnection" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;java.net.URLConnection: java.net.URL url&gt;" Type="java.net.URL"></Field>
+                        <Field Value="&lt;java.net.URL: java.lang.String query&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.onesignal.NotificationSummaryManager: void updatePossibleDependentSummaryOnDismiss(android.content.Context,android.database.sqlite.SQLiteDatabase,int)&gt;">
+                    <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <!-- <Sink Statement="staticinvoke &lt;android.util.Log: int i(java.lang.String,java.lang.String,java.lang.Throwable)&gt;(&quot;OneSignal&quot;, $r1, $r2)" Method="&lt;com.onesignal.OneSignal: void Log(com.onesignal.OneSignal$LOG_LEVEL,java.lang.String,java.lang.Throwable)&gt;">
+                <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.onesignal.NotificationSummaryManager: void updatePossibleDependentSummaryOnDismiss(android.content.Context,android.database.sqlite.SQLiteDatabase,int)&gt;">
+                    <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources> -->
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r2.&lt;android.content.Intent: android.content.Intent setComponent(android.content.ComponentName)&gt;($r5)" Method="&lt;com.onesignal.NotificationExtenderService: android.content.Intent getIntent(android.content.Context)&gt;">
+                <AccessPath Value="$r5" Type="android.content.ComponentName" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.content.ComponentName: java.lang.String mClass&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = virtualinvoke $r1.&lt;android.content.pm.PackageManager: java.util.List queryIntentServices(android.content.Intent,int)&gt;($r2, 128)" Method="&lt;com.onesignal.NotificationExtenderService: android.content.Intent getIntent(android.content.Context)&gt;">
+                    <AccessPath Value="$r4" Type="java.util.List" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r3.&lt;android.os.Bundle: void putStringArray(java.lang.String,java.lang.String[])&gt;(&quot;android.people&quot;, $r19)" Method="&lt;androidx.core.app.NotificationCompatBuilder: void &lt;init&gt;(androidx.core.app.NotificationCompat$Builder)&gt;">
+                <AccessPath Value="$r3" Type="android.os.Bundle" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.os.BaseBundle: java.lang.Object[] keys&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.onesignal.NotificationSummaryManager: void updatePossibleDependentSummaryOnDismiss(android.content.Context,android.database.sqlite.SQLiteDatabase,int)&gt;">
+                    <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <!-- <Sink Statement="staticinvoke &lt;android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)&gt;(&quot;OneSignal&quot;, $r1, $r2)" Method="&lt;com.onesignal.OneSignal: void Log(com.onesignal.OneSignal$LOG_LEVEL,java.lang.String,java.lang.Throwable)&gt;">
+                <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.onesignal.NotificationSummaryManager: void updatePossibleDependentSummaryOnDismiss(android.content.Context,android.database.sqlite.SQLiteDatabase,int)&gt;">
+                    <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources> -->
+        </Result>
+        <Result>
+            <!-- <Sink Statement="staticinvoke &lt;android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)&gt;(&quot;OneSignal&quot;, $r1, $r2)" Method="&lt;com.onesignal.OneSignal: void Log(com.onesignal.OneSignal$LOG_LEVEL,java.lang.String,java.lang.Throwable)&gt;">
+                <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.onesignal.NotificationSummaryManager: void updatePossibleDependentSummaryOnDismiss(android.content.Context,android.database.sqlite.SQLiteDatabase,int)&gt;">
+                    <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources> -->
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r1.&lt;android.os.Bundle: void putString(java.lang.String,java.lang.String)&gt;(&quot;device_id&quot;, $r4)" Method="&lt;com.facebook.marketing.internal.RemoteConfigManager: org.json.JSONObject getRemoteConfigQueryResponse(java.lang.String,java.lang.String)&gt;">
+                <AccessPath Value="$r1" Type="android.os.Bundle" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.os.BaseBundle: java.lang.Object[] values&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r3 = interfaceinvoke $r11.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i4)" Method="&lt;com.facebook.internal.AttributionIdentifiers: com.facebook.internal.AttributionIdentifiers getAttributionIdentifiers(android.content.Context)&gt;">
+                    <AccessPath Value="$r3" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r4.&lt;android.os.Bundle: void putAll(android.os.Bundle)&gt;($r8)" Method="&lt;androidx.core.app.NotificationCompatBuilder: android.app.Notification buildInternal()&gt;">
+                <AccessPath Value="$r4" Type="android.os.Bundle" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.os.BaseBundle: java.lang.Object[] values&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.onesignal.NotificationSummaryManager: void updatePossibleDependentSummaryOnDismiss(android.content.Context,android.database.sqlite.SQLiteDatabase,int)&gt;">
+                    <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r17.&lt;android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)&gt;(&quot;android.car.EXTENSIONS&quot;, $r3)" Method="&lt;androidx.core.app.NotificationCompatBuilder: void &lt;init&gt;(androidx.core.app.NotificationCompat$Builder)&gt;">
+                <AccessPath Value="$r3" Type="android.os.Bundle" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.os.BaseBundle: java.lang.Object[] values&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.onesignal.NotificationSummaryManager: void updatePossibleDependentSummaryOnDismiss(android.content.Context,android.database.sqlite.SQLiteDatabase,int)&gt;">
+                    <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="$r1 = virtualinvoke $r4.&lt;android.content.Context: android.content.ComponentName startService(android.content.Intent)&gt;($r3)" Method="&lt;com.onesignal.JobIntentService$CompatWorkEnqueuer: void enqueueWork(android.content.Intent)&gt;">
+                <AccessPath Value="$r3" Type="android.content.Intent" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.content.Intent: android.content.ComponentName componentName&gt;" Type="android.content.ComponentName"></Field>
+                        <Field Value="&lt;android.content.ComponentName: java.lang.String mClass&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = virtualinvoke $r1.&lt;android.content.pm.PackageManager: java.util.List queryIntentServices(android.content.Intent,int)&gt;($r2, 128)" Method="&lt;com.onesignal.NotificationExtenderService: android.content.Intent getIntent(android.content.Context)&gt;">
+                    <AccessPath Value="$r4" Type="java.util.List" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r2 = interfaceinvoke $r1.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1)" Method="&lt;com.onesignal.NotificationRestorer: android.content.Intent addRestoreExtras(android.content.Intent,android.database.Cursor)&gt;">
+                    <AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r3.&lt;android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)&gt;(&quot;invisible_actions&quot;, $r17)" Method="&lt;androidx.core.app.NotificationCompatBuilder: void &lt;init&gt;(androidx.core.app.NotificationCompat$Builder)&gt;">
+                <AccessPath Value="$r3" Type="android.os.Bundle" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.os.BaseBundle: java.lang.Object[] keys&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.onesignal.NotificationSummaryManager: void updatePossibleDependentSummaryOnDismiss(android.content.Context,android.database.sqlite.SQLiteDatabase,int)&gt;">
+                    <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="staticinvoke &lt;android.util.Log: int v(java.lang.String,java.lang.String,java.lang.Throwable)&gt;(&quot;OneSignal&quot;, $r1, $r2)" Method="&lt;com.onesignal.OneSignal: void Log(com.onesignal.OneSignal$LOG_LEVEL,java.lang.String,java.lang.Throwable)&gt;">
+                <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.onesignal.NotificationSummaryManager: void updatePossibleDependentSummaryOnDismiss(android.content.Context,android.database.sqlite.SQLiteDatabase,int)&gt;">
+                    <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r3.&lt;android.content.Intent: android.content.Intent setComponent(android.content.ComponentName)&gt;($r1)" Method="&lt;com.onesignal.JobIntentService$CompatWorkEnqueuer: void enqueueWork(android.content.Intent)&gt;">
+                <AccessPath Value="$r3" Type="android.content.Intent" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.content.Intent: java.lang.Object[] extraValues&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = virtualinvoke $r1.&lt;android.content.pm.PackageManager: java.util.List queryIntentServices(android.content.Intent,int)&gt;($r2, 128)" Method="&lt;com.onesignal.NotificationExtenderService: android.content.Intent getIntent(android.content.Context)&gt;">
+                    <AccessPath Value="$r4" Type="java.util.List" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r2 = interfaceinvoke $r1.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1)" Method="&lt;com.onesignal.NotificationRestorer: android.content.Intent addRestoreExtras(android.content.Intent,android.database.Cursor)&gt;">
+                    <AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r0.&lt;android.content.Context: android.content.ComponentName startService(android.content.Intent)&gt;($r3)" Method="&lt;com.onesignal.NotificationBundleProcessor: boolean startExtenderService(android.content.Context,android.os.Bundle,com.onesignal.NotificationBundleProcessor$ProcessedBundleResult)&gt;">
+                <AccessPath Value="$r3" Type="android.content.Intent" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.content.Intent: android.content.ComponentName componentName&gt;" Type="android.content.ComponentName"></Field>
+                        <Field Value="&lt;android.content.ComponentName: java.lang.String mClass&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = virtualinvoke $r1.&lt;android.content.pm.PackageManager: java.util.List queryIntentServices(android.content.Intent,int)&gt;($r2, 128)" Method="&lt;com.onesignal.NotificationExtenderService: android.content.Intent getIntent(android.content.Context)&gt;">
+                    <AccessPath Value="$r4" Type="java.util.List" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r1.&lt;android.os.Bundle: void putString(java.lang.String,java.lang.String)&gt;(&quot;fields&quot;, &quot;is_selected&quot;)" Method="&lt;com.facebook.marketing.internal.RemoteConfigManager: org.json.JSONObject getRemoteConfigQueryResponse(java.lang.String,java.lang.String)&gt;">
+                <AccessPath Value="$r1" Type="android.os.Bundle" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.os.BaseBundle: java.lang.Object[] values&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r3 = interfaceinvoke $r11.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i4)" Method="&lt;com.facebook.internal.AttributionIdentifiers: com.facebook.internal.AttributionIdentifiers getAttributionIdentifiers(android.content.Context)&gt;">
+                    <AccessPath Value="$r3" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r0.&lt;android.os.Bundle: void putString(java.lang.String,java.lang.String)&gt;(&quot;advertiser_id&quot;, $r6)" Method="&lt;com.facebook.internal.FetchedAppSettingsManager: org.json.JSONObject getAppSettingsQueryResponse(java.lang.String)&gt;">
+                <AccessPath Value="$r0" Type="android.os.Bundle" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.os.BaseBundle: java.lang.Object[] values&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r3 = interfaceinvoke $r11.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i4)" Method="&lt;com.facebook.internal.AttributionIdentifiers: com.facebook.internal.AttributionIdentifiers getAttributionIdentifiers(android.content.Context)&gt;">
+                    <AccessPath Value="$r3" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="$r13 = virtualinvoke $r13.&lt;java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)&gt;(&quot;$[notif_count]&quot;, $r20)" Method="&lt;com.onesignal.GenerateNotification: void createSummaryNotification(com.onesignal.NotificationGenerationJob,com.onesignal.GenerateNotification$OneSignalNotificationBuilder)&gt;">
+                <AccessPath Value="$r13" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.onesignal.NotificationSummaryManager: void updatePossibleDependentSummaryOnDismiss(android.content.Context,android.database.sqlite.SQLiteDatabase,int)&gt;">
+                    <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <!-- <Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String,java.lang.Throwable)&gt;(&quot;OneSignal&quot;, $r1, $r2)" Method="&lt;com.onesignal.OneSignal: void Log(com.onesignal.OneSignal$LOG_LEVEL,java.lang.String,java.lang.Throwable)&gt;">
+                <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.onesignal.NotificationSummaryManager: void updatePossibleDependentSummaryOnDismiss(android.content.Context,android.database.sqlite.SQLiteDatabase,int)&gt;">
+                    <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources> -->
+        </Result>
+    </Results>
+    <PerformanceData>
+        <PerformanceEntry Name="CallgraphConstructionSeconds" Value="118"></PerformanceEntry>
+        <PerformanceEntry Name="TaintPropagationSeconds" Value="17"></PerformanceEntry>
+        <PerformanceEntry Name="PathReconstructionSeconds" Value="4"></PerformanceEntry>
+        <PerformanceEntry Name="TotalRuntimeSeconds" Value="146"></PerformanceEntry>
+        <PerformanceEntry Name="MaxMemoryConsumption" Value="172"></PerformanceEntry>
+        <PerformanceEntry Name="SourceCount" Value="22"></PerformanceEntry>
+        <PerformanceEntry Name="SinkCount" Value="190"></PerformanceEntry>
+    </PerformanceData>
+</DataFlowResults>

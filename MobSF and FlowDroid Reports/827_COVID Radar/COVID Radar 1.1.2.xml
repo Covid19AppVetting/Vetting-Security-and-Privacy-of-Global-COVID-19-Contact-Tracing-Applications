@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFlowResults FileFormatVersion="102" TerminationState="Success">
+    <Results>
+        <Result>
+            <!-- <Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String)&gt;($r1, $r2)" Method="&lt;v.e0.k$a: void a(java.lang.String,java.lang.String,java.lang.Throwable[])&gt;">
+                <AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;java.lang.String: char[] content&gt;" Type="char[]"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r20 = interfaceinvoke $r18.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1)" Method="&lt;e.a.a.f: java.lang.Object n(y.t.d)&gt;">
+                    <AccessPath Value="$r20" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources> -->
+        </Result>
+        <Result>
+            <Sink Statement="$r3 = virtualinvoke $r2.&lt;android.content.Context: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)&gt;(null, $r1)" Method="&lt;v.e0.v.p.f.b: java.lang.Object a()&gt;">
+                <AccessPath Value="$r2" Type="android.content.Context" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r7 = interfaceinvoke $r11.&lt;android.database.Cursor: java.lang.String getString(int)&gt;(0)" Method="&lt;v.e0.v.n: void run()&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="$z0 = virtualinvoke $r6.&lt;android.content.Context: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)&gt;($r8, $r0, 33)" Method="&lt;e.a.a.a0.b: void a(y.w.b.p)&gt;">
+                <AccessPath Value="$r0" Type="e.a.a.a0.b" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r20 = interfaceinvoke $r18.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1)" Method="&lt;e.a.a.f: java.lang.Object n(y.t.d)&gt;">
+                    <AccessPath Value="$r20" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="$r13 = interfaceinvoke $r13.&lt;android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)&gt;($r14, $r1)" Method="&lt;e.a.a.z.j.a.a$b: java.lang.Object d(java.lang.Object)&gt;">
+                <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r20 = interfaceinvoke $r18.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1)" Method="&lt;e.a.a.f: java.lang.Object n(y.t.d)&gt;">
+                    <AccessPath Value="$r20" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r1.&lt;android.os.Bundle: void putAll(android.os.Bundle)&gt;($r4)" Method="&lt;v.w.b: void b(android.os.Bundle)&gt;">
+                <AccessPath Value="$r4" Type="android.os.Bundle" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;v.b.k.h$h: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;v.b.k.h$h: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;v.b.k.h$h: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;v.b.k.h$h: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <!-- <Sink Statement="staticinvoke &lt;android.util.Log: int i(java.lang.String,java.lang.String)&gt;(&quot;Analytics&quot;, $r8)" Method="&lt;e.a.a.c.v.a$b: java.lang.Object d(java.lang.Object)&gt;">
+                <AccessPath Value="$r8" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r20 = interfaceinvoke $r18.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1)" Method="&lt;e.a.a.f: java.lang.Object n(y.t.d)&gt;">
+                    <AccessPath Value="$r20" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources> -->
+        </Result>
+        <Result>
+            <!-- <Sink Statement="staticinvoke &lt;android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)&gt;($r1, $r2, $r4)" Method="&lt;v.e0.k$a: void b(java.lang.String,java.lang.String,java.lang.Throwable[])&gt;">
+                <AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;java.lang.String: char[] content&gt;" Type="char[]"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r20 = interfaceinvoke $r18.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1)" Method="&lt;e.a.a.f: java.lang.Object n(y.t.d)&gt;">
+                    <AccessPath Value="$r20" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources> -->
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r2.&lt;android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)&gt;(&quot;androidx.lifecycle.BundlableSavedStateRegistry.key&quot;, $r1)" Method="&lt;v.w.b: void b(android.os.Bundle)&gt;">
+                <AccessPath Value="$r1" Type="android.os.Bundle" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;v.b.k.h$h: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;v.b.k.h$h: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;v.b.k.h$h: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;v.b.k.h$h: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r5.&lt;android.content.Context: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)&gt;($r1, $r2)" Method="&lt;v.b.k.h$g: void e()&gt;">
+                <AccessPath Value="$r5" Type="android.content.Context" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;v.b.k.h$h: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;v.b.k.h$h: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;v.b.k.h$h: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;v.b.k.h$h: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <!-- <Sink Statement="staticinvoke &lt;android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)&gt;(&quot;TokenRefresher&quot;, &quot;login&quot;, $r8)" Method="&lt;e.a.a.c.h0.a.d: java.lang.Object d(java.lang.Object)&gt;">
+                <AccessPath Value="$r8" Type="java.lang.Throwable" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r20 = interfaceinvoke $r18.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1)" Method="&lt;e.a.a.f: java.lang.Object n(y.t.d)&gt;">
+                    <AccessPath Value="$r20" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources> -->
+        </Result>
+    </Results>
+    <PerformanceData>
+        <PerformanceEntry Name="CallgraphConstructionSeconds" Value="163"></PerformanceEntry>
+        <PerformanceEntry Name="TaintPropagationSeconds" Value="367"></PerformanceEntry>
+        <PerformanceEntry Name="PathReconstructionSeconds" Value="22"></PerformanceEntry>
+        <PerformanceEntry Name="TotalRuntimeSeconds" Value="562"></PerformanceEntry>
+        <PerformanceEntry Name="MaxMemoryConsumption" Value="286"></PerformanceEntry>
+        <PerformanceEntry Name="SourceCount" Value="10"></PerformanceEntry>
+        <PerformanceEntry Name="SinkCount" Value="244"></PerformanceEntry>
+    </PerformanceData>
+</DataFlowResults>

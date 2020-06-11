@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFlowResults FileFormatVersion="102" TerminationState="Success">
+	<Results>
+		<Result>
+			<Sink Statement="specialinvoke $r0.&lt;o.Aux: void startActivityForResult(android.content.Intent,int)&gt;($r1, $i0)" Method="&lt;o.ɩɿ: void startActivityForResult(android.content.Intent,int)&gt;">
+				<AccessPath Value="$r0" Type="o.lI" TaintSubFields="true">
+					<Fields>
+						<Field Value="&lt;o.AuX: o.ɨ mDelegate&gt;" Type="o.ȷ">
+						</Field>
+						<Field Value="&lt;o.ȷ: o.ȷ$ǃ ıı&gt;" Type="o.ȷ$Ι">
+						</Field>
+					</Fields>
+				</AccessPath>
+			</Sink>
+			<Sources>
+				<Source Statement="$d1 = virtualinvoke $r6.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;o.ȷ$Ι: int ǃ()&gt;">
+					<AccessPath Value="$d1" Type="double" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+				<Source Statement="$d0 = virtualinvoke $r6.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;o.ȷ$Ι: int ǃ()&gt;">
+					<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+				<Source Statement="$d0 = virtualinvoke $r6.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;o.ȷ$Ι: int ǃ()&gt;">
+					<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+				<Source Statement="$d1 = virtualinvoke $r6.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;o.ȷ$Ι: int ǃ()&gt;">
+					<AccessPath Value="$d1" Type="double" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+			</Sources>
+		</Result>
+		<Result>
+			<Sink Statement="staticinvoke &lt;android.util.Log: int e(java.lang.String,java.lang.String)&gt;(&quot;PhenotypeFlag&quot;, $r5)" Method="&lt;o.ӀΞ: java.lang.Double ɩ(java.lang.Object)&gt;">
+				<AccessPath Value="$r5" Type="java.lang.String" TaintSubFields="true">
+				</AccessPath>
+			</Sink>
+			<Sources>
+				<Source Statement="$r8 = interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;(1)" Method="&lt;o.чӀ: java.util.Map ι()&gt;">
+					<AccessPath Value="$r8" Type="java.lang.String" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+			</Sources>
+		</Result>
+		<Result>
+			<Sink Statement="virtualinvoke $r5.&lt;android.content.Context: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)&gt;($r1, $r2)" Method="&lt;o.ȷ$ǃ: void ι()&gt;">
+				<AccessPath Value="$r5" Type="android.content.Context" TaintSubFields="true">
+				</AccessPath>
+			</Sink>
+			<Sources>
+				<Source Statement="$d1 = virtualinvoke $r6.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;o.ȷ$Ι: int ǃ()&gt;">
+					<AccessPath Value="$d1" Type="double" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+				<Source Statement="$d0 = virtualinvoke $r6.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;o.ȷ$Ι: int ǃ()&gt;">
+					<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+				<Source Statement="$d0 = virtualinvoke $r6.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;o.ȷ$Ι: int ǃ()&gt;">
+					<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+				<Source Statement="$d1 = virtualinvoke $r6.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;o.ȷ$Ι: int ǃ()&gt;">
+					<AccessPath Value="$d1" Type="double" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+			</Sources>
+		</Result>
+		<Result>
+			<!-- <Sink Statement="staticinvoke &lt;android.util.Log: int e(java.lang.String,java.lang.String)&gt;(&quot;PhenotypeFlag&quot;, $r4)" Method="&lt;o.Ӏʃ: java.lang.Long Ι(java.lang.Object)&gt;">
+				<AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true">
+				</AccessPath>
+			</Sink>
+			<Sources>
+				<Source Statement="$r8 = interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;(1)" Method="&lt;o.чӀ: java.util.Map ι()&gt;">
+					<AccessPath Value="$r8" Type="java.lang.String" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+				<Source Statement="$r3 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;(1)" Method="&lt;o.эǃ: java.lang.String ɩ(android.content.ContentResolver,java.lang.String,java.lang.String)&gt;">
+					<AccessPath Value="$r3" Type="java.lang.String" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+				<Source Statement="$r6 = interfaceinvoke $r3.&lt;android.database.Cursor: java.lang.String getString(int)&gt;(1)" Method="&lt;o.эǃ: java.util.Map Ι(android.content.ContentResolver,java.lang.String[])&gt;">
+					<AccessPath Value="$r6" Type="java.lang.String" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+			</Sources> -->
+		</Result>
+		<Result>
+			<Sink Statement="virtualinvoke $r0.&lt;android.app.Activity: void setResult(int,android.content.Intent)&gt;($i1, $r1)" Method="&lt;o.jX: void onActivityResult(int,int,android.content.Intent)&gt;">
+				<AccessPath Value="$r0" Type="o.jX" TaintSubFields="true">
+					<Fields>
+						<Field Value="&lt;o.jX: o.ɹ ι&gt;" Type="o.ɹ">
+						</Field>
+						<Field Value="&lt;o.ӏ: o.ɨ mDelegate&gt;" Type="o.ȷ">
+						</Field>
+						<Field Value="&lt;o.ȷ: o.ȷ$ǃ ӷ&gt;" Type="o.ȷ$Ι">
+						</Field>
+						<Field Value="&lt;o.ȷ$Ι: o.COn ι&gt;" Type="o.COn">
+						</Field>
+						<Field Value="&lt;o.COn: o.COn$ǃ ι&gt;" Type="o.COn$ǃ">
+						</Field>
+					</Fields>
+				</AccessPath>
+			</Sink>
+			<Sources>
+				<Source Statement="$d1 = virtualinvoke $r6.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;o.ȷ$Ι: int ǃ()&gt;">
+					<AccessPath Value="$d1" Type="double" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+				<Source Statement="$d0 = virtualinvoke $r6.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;o.ȷ$Ι: int ǃ()&gt;">
+					<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+				<Source Statement="$d0 = virtualinvoke $r6.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;o.ȷ$Ι: int ǃ()&gt;">
+					<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+				<Source Statement="$d1 = virtualinvoke $r6.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;o.ȷ$Ι: int ǃ()&gt;">
+					<AccessPath Value="$d1" Type="double" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+			</Sources>
+		</Result>
+		<Result>
+			<!-- <Sink Statement="staticinvoke &lt;android.util.Log: int e(java.lang.String,java.lang.String)&gt;(&quot;PhenotypeFlag&quot;, $r3)" Method="&lt;o.ӏɭ: java.lang.Object ǃ(java.lang.Object)&gt;">
+				<AccessPath Value="$r3" Type="java.lang.String" TaintSubFields="true">
+				</AccessPath>
+			</Sink>
+			<Sources>
+				<Source Statement="$r8 = interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;(1)" Method="&lt;o.чӀ: java.util.Map ι()&gt;">
+					<AccessPath Value="$r8" Type="java.lang.String" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+				<Source Statement="$r3 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;(1)" Method="&lt;o.эǃ: java.lang.String ɩ(android.content.ContentResolver,java.lang.String,java.lang.String)&gt;">
+					<AccessPath Value="$r3" Type="java.lang.String" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+				<Source Statement="$r6 = interfaceinvoke $r3.&lt;android.database.Cursor: java.lang.String getString(int)&gt;(1)" Method="&lt;o.эǃ: java.util.Map Ι(android.content.ContentResolver,java.lang.String[])&gt;">
+					<AccessPath Value="$r6" Type="java.lang.String" TaintSubFields="true">
+					</AccessPath>
+				</Source>
+			</Sources> -->
+		</Result>
+	</Results>
+	<PerformanceData>
+		<PerformanceEntry Name="CallgraphConstructionSeconds" Value="98">
+		</PerformanceEntry>
+		<PerformanceEntry Name="TaintPropagationSeconds" Value="928">
+		</PerformanceEntry>
+		<PerformanceEntry Name="PathReconstructionSeconds" Value="3">
+		</PerformanceEntry>
+		<PerformanceEntry Name="TotalRuntimeSeconds" Value="1035">
+		</PerformanceEntry>
+		<PerformanceEntry Name="MaxMemoryConsumption" Value="298">
+		</PerformanceEntry>
+		<PerformanceEntry Name="SourceCount" Value="29">
+		</PerformanceEntry>
+		<PerformanceEntry Name="SinkCount" Value="200">
+		</PerformanceEntry>
+	</PerformanceData>
+</DataFlowResults>

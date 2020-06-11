@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFlowResults FileFormatVersion="102" TerminationState="Success">
+    <Results>
+        <Result>
+            <Sink Statement="virtualinvoke $r4.&lt;java.io.StringWriter: void write(int)&gt;($i2)" Method="&lt;com.transistorsoft.locationmanager.util.d: java.lang.String a(java.util.HashMap)&gt;">
+                <AccessPath Value="$r4" Type="java.io.StringWriter" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;java.io.StringWriter: java.lang.String string&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r2 = interfaceinvoke $r1.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.transistorsoft.locationmanager.data.sqlite.GeofenceDAO: com.transistorsoft.locationmanager.geofence.TSGeofence a(android.database.Cursor)&gt;">
+                    <AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="$z0 = virtualinvoke $r0.&lt;android.os.Handler: boolean sendMessage(android.os.Message)&gt;($r5)" Method="&lt;org.greenrobot.eventbus.h: void a(org.greenrobot.eventbus.p,java.lang.Object)&gt;">
+                <AccessPath Value="$r0" Type="org.greenrobot.eventbus.h" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;org.greenrobot.eventbus.h: org.greenrobot.eventbus.e c&gt;" Type="org.greenrobot.eventbus.e"></Field>
+                        <Field Value="&lt;org.greenrobot.eventbus.e: org.greenrobot.eventbus.a k&gt;" Type="org.greenrobot.eventbus.a"></Field>
+                        <Field Value="&lt;org.greenrobot.eventbus.a: org.greenrobot.eventbus.k a&gt;" Type="org.greenrobot.eventbus.k"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d0 = virtualinvoke $r2.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.transistorsoft.locationmanager.location.TSLocation: void initialize(android.content.Context,android.location.Location,com.google.android.gms.location.e)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r2.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.transistorsoft.locationmanager.location.TSLocation: void initialize(android.content.Context,android.location.Location,com.google.android.gms.location.e)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r4.&lt;java.io.StringWriter: void write(int)&gt;($i0)" Method="&lt;com.transistorsoft.locationmanager.util.d: java.lang.String a(java.util.HashMap)&gt;">
+                <AccessPath Value="$r4" Type="java.io.StringWriter" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;java.io.StringWriter: java.lang.String string&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r2 = interfaceinvoke $r1.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.transistorsoft.locationmanager.data.sqlite.GeofenceDAO: com.transistorsoft.locationmanager.geofence.TSGeofence a(android.database.Cursor)&gt;">
+                    <AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r1.&lt;android.os.Bundle: void putParcelable(java.lang.String,android.os.Parcelable)&gt;(&quot;android:support:fragments&quot;, $r5)" Method="&lt;androidx.fragment.app.j: void onSaveInstanceState(android.os.Bundle)&gt;">
+                <AccessPath Value="$r5" Type="androidx.fragment.app.y" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;androidx.fragment.app.y: java.lang.String d&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r4.&lt;java.io.StringWriter: void write(int)&gt;($i0)" Method="&lt;com.transistorsoft.locationmanager.util.d: java.lang.String a(java.util.HashMap)&gt;">
+                <AccessPath Value="$r4" Type="java.io.StringWriter" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;java.io.StringWriter: java.lang.String string&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r2 = interfaceinvoke $r1.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.transistorsoft.locationmanager.data.sqlite.GeofenceDAO: com.transistorsoft.locationmanager.geofence.TSGeofence a(android.database.Cursor)&gt;">
+                    <AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r2.&lt;android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)&gt;($r8, $r3)" Method="&lt;androidx.savedstate.a: void a(android.os.Bundle)&gt;">
+                <AccessPath Value="$r2" Type="android.os.Bundle" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r4.&lt;java.io.StringWriter: void write(int)&gt;($i0)" Method="&lt;com.transistorsoft.locationmanager.util.d: java.lang.String a(java.util.HashMap)&gt;">
+                <AccessPath Value="$r4" Type="java.io.StringWriter" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;java.io.StringWriter: java.lang.String string&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r2 = interfaceinvoke $r1.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.transistorsoft.locationmanager.data.sqlite.GeofenceDAO: com.transistorsoft.locationmanager.geofence.TSGeofence a(android.database.Cursor)&gt;">
+                    <AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="interfaceinvoke $r8.&lt;android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putLong(java.lang.String,long)&gt;($r6, $l1)" Method="&lt;com.transistorsoft.locationmanager.location.TSLocationManager: void persistLastOdometerLocation(android.location.Location)&gt;">
+                <AccessPath Value="$l1" Type="long" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.transistorsoft.locationmanager.location.TSLocationManager: void persistLastOdometerLocation(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <!-- <Sink Statement="staticinvoke &lt;android.util.Log: int v(java.lang.String,java.lang.String)&gt;(&quot;FragmentManager&quot;, $r8)" Method="&lt;androidx.fragment.app.w: void a(androidx.fragment.app.i,int,int,int,boolean)&gt;">
+                <AccessPath Value="$r8" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.I: void a(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources> -->
+        </Result>
+        <Result>
+            <Sink Statement="interfaceinvoke $r8.&lt;android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putLong(java.lang.String,long)&gt;($r6, $l0)" Method="&lt;com.transistorsoft.locationmanager.location.TSLocationManager: void persistLastOdometerLocation(android.location.Location)&gt;">
+                <AccessPath Value="$l0" Type="long" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.transistorsoft.locationmanager.location.TSLocationManager: void persistLastOdometerLocation(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+    </Results>
+    <PerformanceData>
+        <PerformanceEntry Name="CallgraphConstructionSeconds" Value="153"></PerformanceEntry>
+        <PerformanceEntry Name="TaintPropagationSeconds" Value="1461"></PerformanceEntry>
+        <PerformanceEntry Name="PathReconstructionSeconds" Value="126"></PerformanceEntry>
+        <PerformanceEntry Name="TotalRuntimeSeconds" Value="1760"></PerformanceEntry>
+        <PerformanceEntry Name="MaxMemoryConsumption" Value="361"></PerformanceEntry>
+        <PerformanceEntry Name="SourceCount" Value="32"></PerformanceEntry>
+        <PerformanceEntry Name="SinkCount" Value="384"></PerformanceEntry>
+    </PerformanceData>
+</DataFlowResults>

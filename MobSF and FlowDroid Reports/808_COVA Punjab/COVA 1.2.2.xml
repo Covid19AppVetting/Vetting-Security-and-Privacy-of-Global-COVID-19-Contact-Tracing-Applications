@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFlowResults FileFormatVersion="102" TerminationState="Success">
+    <Results>
+        <Result>
+            <Sink Statement="virtualinvoke $r0.&lt;android.app.Activity: void setResult(int,android.content.Intent)&gt;(64, $r1)" Method="&lt;com.github.dhaval2404.imagepicker.ImagePickerActivity: void setError(java.lang.String)&gt;">
+                <AccessPath Value="$r0" Type="com.github.dhaval2404.imagepicker.ImagePickerActivity" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;com.github.dhaval2404.imagepicker.ImagePickerActivity: java.io.File mImageFile&gt;" Type="java.io.File"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r1 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getDataColumn(android.content.Context,android.net.Uri,java.lang.String,java.lang.String[])&gt;">
+                    <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r7 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getFilePath(android.content.Context,android.net.Uri)&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r1.&lt;java.io.File: boolean delete()&gt;()" Method="&lt;com.github.dhaval2404.imagepicker.provider.CameraProvider: void onFailure()&gt;">
+                <AccessPath Value="$r1" Type="java.io.File" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r1 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getDataColumn(android.content.Context,android.net.Uri,java.lang.String,java.lang.String[])&gt;">
+                    <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r7 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getFilePath(android.content.Context,android.net.Uri)&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r1.&lt;android.os.Bundle: void putIntArray(java.lang.String,int[])&gt;(&quot;android:support:request_indicies&quot;, $r9)" Method="&lt;d.k.a.e: void onSaveInstanceState(android.os.Bundle)&gt;">
+                <AccessPath Value="$r1" Type="android.os.Bundle" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.os.BaseBundle: java.lang.Object[] values&gt;" Type="java.io.File"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r1 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getDataColumn(android.content.Context,android.net.Uri,java.lang.String,java.lang.String[])&gt;">
+                    <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r7 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getFilePath(android.content.Context,android.net.Uri)&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="specialinvoke $r0.&lt;android.app.Activity: void startActivityForResult(android.content.Intent,int)&gt;($r1, $i0)" Method="&lt;d.k.a.e: void startActivityForResult(android.content.Intent,int)&gt;">
+                <AccessPath Value="$r0" Type="com.github.dhaval2404.imagepicker.ImagePickerActivity" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;com.github.dhaval2404.imagepicker.ImagePickerActivity: java.io.File mImageFile&gt;" Type="java.io.File"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r1 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getDataColumn(android.content.Context,android.net.Uri,java.lang.String,java.lang.String[])&gt;">
+                    <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r7 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getFilePath(android.content.Context,android.net.Uri)&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r0.&lt;android.app.Activity: void setResult(int,android.content.Intent)&gt;(0, $r1)" Method="&lt;com.github.dhaval2404.imagepicker.ImagePickerActivity: void setResultCancel()&gt;">
+                <AccessPath Value="$r0" Type="com.github.dhaval2404.imagepicker.ImagePickerActivity" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;com.github.dhaval2404.imagepicker.ImagePickerActivity: com.github.dhaval2404.imagepicker.provider.CompressionProvider mCompressionProvider&gt;" Type="com.github.dhaval2404.imagepicker.provider.CompressionProvider"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r1 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getDataColumn(android.content.Context,android.net.Uri,java.lang.String,java.lang.String[])&gt;">
+                    <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r7 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getFilePath(android.content.Context,android.net.Uri)&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r1.&lt;android.os.Bundle: void putInt(java.lang.String,int)&gt;(&quot;android:support:next_request_index&quot;, $i0)" Method="&lt;d.k.a.e: void onSaveInstanceState(android.os.Bundle)&gt;">
+                <AccessPath Value="$r1" Type="android.os.Bundle" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.os.BaseBundle: java.lang.Object[] values&gt;" Type="java.io.File"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r1 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getDataColumn(android.content.Context,android.net.Uri,java.lang.String,java.lang.String[])&gt;">
+                    <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r7 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getFilePath(android.content.Context,android.net.Uri)&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r3.&lt;android.app.Activity: void setResult(int,android.content.Intent)&gt;(-1, $r2)" Method="&lt;e.f.a.k.m: void onClick(android.view.View)&gt;">
+                <AccessPath Value="$r3" Type="com.vincent.filepicker.activity.ImagePickActivity" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;d.b.k.m: d.b.k.o mDelegate&gt;" Type="d.b.k.p"></Field>
+                        <Field Value="&lt;d.b.k.p: java.lang.Object d&gt;" Type="com.github.dhaval2404.imagepicker.ImagePickerActivity"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r1 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getDataColumn(android.content.Context,android.net.Uri,java.lang.String,java.lang.String[])&gt;">
+                    <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r7 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getFilePath(android.content.Context,android.net.Uri)&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <!-- <Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String)&gt;(&quot;l#&quot;, $r0)" Method="&lt;e.b.a: void a(java.lang.String)&gt;">
+                <AccessPath Value="$r0" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r10 = interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1)" Method="&lt;a.a.a.a.f.c.b: java.util.List b()&gt;">
+                    <AccessPath Value="$r10" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r6 = interfaceinvoke $r7.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1)" Method="&lt;a.a.a.a.f.c.b: in.gov.punjab.cova.Models.Requests.MDBTrackingData a(long)&gt;">
+                    <AccessPath Value="$r6" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r9 = interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1)" Method="&lt;a.a.a.a.f.c.b: java.util.List b()&gt;">
+                    <AccessPath Value="$r9" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r11 = interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1)" Method="&lt;a.a.a.a.f.c.b: java.util.List b()&gt;">
+                    <AccessPath Value="$r11" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r6 = interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1)" Method="&lt;a.a.a.a.f.c.b: java.util.List b()&gt;">
+                    <AccessPath Value="$r6" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r8 = interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1)" Method="&lt;a.a.a.a.f.c.b: java.util.List b()&gt;">
+                    <AccessPath Value="$r8" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r7 = interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1)" Method="&lt;a.a.a.a.f.c.b: java.util.List b()&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources> -->
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r1.&lt;android.os.Bundle: void putSerializable(java.lang.String,java.io.Serializable)&gt;(&quot;state.image_file&quot;, $r2)" Method="&lt;com.github.dhaval2404.imagepicker.ImagePickerActivity: void onSaveInstanceState(android.os.Bundle)&gt;">
+                <AccessPath Value="$r1" Type="android.os.Bundle" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.os.BaseBundle: java.lang.Object[] values&gt;" Type="java.io.File"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r1 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getDataColumn(android.content.Context,android.net.Uri,java.lang.String,java.lang.String[])&gt;">
+                    <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r7 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getFilePath(android.content.Context,android.net.Uri)&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r0.&lt;android.app.Activity: void setResult(int,android.content.Intent)&gt;(-1, $r1)" Method="&lt;com.github.dhaval2404.imagepicker.ImagePickerActivity: void setResult(java.io.File)&gt;">
+                <AccessPath Value="$r1" Type="android.content.Intent" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.content.Intent: java.lang.Object[] extraValues&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r1 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getDataColumn(android.content.Context,android.net.Uri,java.lang.String,java.lang.String[])&gt;">
+                    <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r7 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getFilePath(android.content.Context,android.net.Uri)&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r1.&lt;java.io.File: boolean delete()&gt;()" Method="&lt;com.github.dhaval2404.imagepicker.provider.CropProvider: void onFailure()&gt;">
+                <AccessPath Value="$r1" Type="java.io.File" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r1 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getDataColumn(android.content.Context,android.net.Uri,java.lang.String,java.lang.String[])&gt;">
+                    <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r7 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getFilePath(android.content.Context,android.net.Uri)&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r3.&lt;java.io.File: boolean delete()&gt;()" Method="&lt;com.github.dhaval2404.imagepicker.ImagePickerActivity: void setCropImage(java.io.File)&gt;">
+                <AccessPath Value="$r3" Type="java.io.File" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r1 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getDataColumn(android.content.Context,android.net.Uri,java.lang.String,java.lang.String[])&gt;">
+                    <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r7 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getFilePath(android.content.Context,android.net.Uri)&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r1.&lt;android.os.Bundle: void putBundle(java.lang.String,android.os.Bundle)&gt;(&quot;androidx.lifecycle.BundlableSavedStateRegistry.key&quot;, $r2)" Method="&lt;d.q.a: void a(android.os.Bundle)&gt;">
+                <AccessPath Value="$r1" Type="android.os.Bundle" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.os.BaseBundle: java.lang.Object[] values&gt;" Type="java.io.File"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r1 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getDataColumn(android.content.Context,android.net.Uri,java.lang.String,java.lang.String[])&gt;">
+                    <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r7 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getFilePath(android.content.Context,android.net.Uri)&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r3.&lt;android.app.Activity: void setResult(int,android.content.Intent)&gt;(-1, $r2)" Method="&lt;e.f.a.k.b: void onClick(android.view.View)&gt;">
+                <AccessPath Value="$r2" Type="android.content.Intent" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.content.Intent: java.lang.Object[] extraValues&gt;" Type="java.util.ArrayList"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r1 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getDataColumn(android.content.Context,android.net.Uri,java.lang.String,java.lang.String[])&gt;">
+                    <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r7 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getFilePath(android.content.Context,android.net.Uri)&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r3.&lt;android.app.Activity: void setResult(int,android.content.Intent)&gt;(-1, $r2)" Method="&lt;e.f.a.k.v: void onClick(android.view.View)&gt;">
+                <AccessPath Value="$r3" Type="com.vincent.filepicker.activity.VideoPickActivity" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;d.b.k.m: d.b.k.o mDelegate&gt;" Type="d.b.k.p"></Field>
+                        <Field Value="&lt;d.b.k.p: java.lang.Object d&gt;" Type="com.github.dhaval2404.imagepicker.ImagePickerActivity"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r1 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getDataColumn(android.content.Context,android.net.Uri,java.lang.String,java.lang.String[])&gt;">
+                    <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$r7 = interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.github.dhaval2404.imagepicker.util.FileUriUtils: java.lang.String getFilePath(android.content.Context,android.net.Uri)&gt;">
+                    <AccessPath Value="$r7" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;d.b.k.p$i: int c()&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+    </Results>
+    <PerformanceData>
+        <PerformanceEntry Name="CallgraphConstructionSeconds" Value="159"></PerformanceEntry>
+        <PerformanceEntry Name="TaintPropagationSeconds" Value="2112"></PerformanceEntry>
+        <PerformanceEntry Name="PathReconstructionSeconds" Value="68"></PerformanceEntry>
+        <PerformanceEntry Name="TotalRuntimeSeconds" Value="2353"></PerformanceEntry>
+        <PerformanceEntry Name="MaxMemoryConsumption" Value="302"></PerformanceEntry>
+        <PerformanceEntry Name="SourceCount" Value="48"></PerformanceEntry>
+        <PerformanceEntry Name="SinkCount" Value="367"></PerformanceEntry>
+    </PerformanceData>
+</DataFlowResults>

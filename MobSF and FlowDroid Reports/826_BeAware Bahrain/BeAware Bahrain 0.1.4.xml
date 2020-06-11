@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFlowResults FileFormatVersion="102" TerminationState="Success">
+    <Results>
+        <Result>
+            <Sink Statement="interfaceinvoke $r8.&lt;android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putLong(java.lang.String,long)&gt;($r6, $l1)" Method="&lt;com.transistorsoft.locationmanager.location.TSLocationManager: void persistLastOdometerLocation(android.location.Location)&gt;">
+                <AccessPath Value="$l1" Type="long" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.transistorsoft.locationmanager.location.TSLocationManager: void persistLastOdometerLocation(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r4.&lt;java.io.StringWriter: void write(int)&gt;($i0)" Method="&lt;com.transistorsoft.locationmanager.util.d: java.lang.String a(java.util.HashMap)&gt;">
+                <AccessPath Value="$r4" Type="java.io.StringWriter" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;java.io.StringWriter: java.lang.String string&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r2 = interfaceinvoke $r1.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.transistorsoft.locationmanager.data.sqlite.GeofenceDAO: com.transistorsoft.locationmanager.geofence.TSGeofence a(android.database.Cursor)&gt;">
+                    <AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r4.&lt;java.io.StringWriter: void write(int)&gt;($i2)" Method="&lt;com.transistorsoft.locationmanager.util.d: java.lang.String a(java.util.HashMap)&gt;">
+                <AccessPath Value="$r4" Type="java.io.StringWriter" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;java.io.StringWriter: java.lang.String string&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r2 = interfaceinvoke $r1.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.transistorsoft.locationmanager.data.sqlite.GeofenceDAO: com.transistorsoft.locationmanager.geofence.TSGeofence a(android.database.Cursor)&gt;">
+                    <AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r4.&lt;java.io.StringWriter: void write(int)&gt;($i0)" Method="&lt;com.transistorsoft.locationmanager.util.d: java.lang.String a(java.util.HashMap)&gt;">
+                <AccessPath Value="$r4" Type="java.io.StringWriter" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;java.io.StringWriter: java.lang.String string&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r2 = interfaceinvoke $r1.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.transistorsoft.locationmanager.data.sqlite.GeofenceDAO: com.transistorsoft.locationmanager.geofence.TSGeofence a(android.database.Cursor)&gt;">
+                    <AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="interfaceinvoke $r8.&lt;android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putLong(java.lang.String,long)&gt;($r6, $l0)" Method="&lt;com.transistorsoft.locationmanager.location.TSLocationManager: void persistLastOdometerLocation(android.location.Location)&gt;">
+                <AccessPath Value="$l0" Type="long" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.transistorsoft.locationmanager.location.TSLocationManager: void persistLastOdometerLocation(android.location.Location)&gt;">
+                    <AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="$z0 = virtualinvoke $r0.&lt;org.greenrobot.eventbus.HandlerPoster: boolean sendMessage(android.os.Message)&gt;($r5)" Method="&lt;org.greenrobot.eventbus.HandlerPoster: void enqueue(org.greenrobot.eventbus.Subscription,java.lang.Object)&gt;">
+                <AccessPath Value="$r0" Type="org.greenrobot.eventbus.HandlerPoster" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;org.greenrobot.eventbus.HandlerPoster: org.greenrobot.eventbus.PendingPostQueue queue&gt;" Type="org.greenrobot.eventbus.PendingPostQueue"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$d1 = virtualinvoke $r2.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.transistorsoft.locationmanager.location.TSLocation: void initialize(android.content.Context,android.location.Location,com.google.android.gms.location.ActivityTransitionEvent)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+                <Source Statement="$d1 = virtualinvoke $r2.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.transistorsoft.locationmanager.location.TSLocation: void initialize(android.content.Context,android.location.Location,com.google.android.gms.location.ActivityTransitionEvent)&gt;">
+                    <AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r4.&lt;java.io.StringWriter: void write(int)&gt;($i0)" Method="&lt;com.transistorsoft.locationmanager.util.d: java.lang.String a(java.util.HashMap)&gt;">
+                <AccessPath Value="$r4" Type="java.io.StringWriter" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;java.io.StringWriter: java.lang.String string&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r2 = interfaceinvoke $r1.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.transistorsoft.locationmanager.data.sqlite.GeofenceDAO: com.transistorsoft.locationmanager.geofence.TSGeofence a(android.database.Cursor)&gt;">
+                    <AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r0.&lt;android.content.Context: void sendBroadcast(android.content.Intent)&gt;($r2)" Method="&lt;me.leolin.shortcutbadger.util.BroadcastHelper: void sendIntentExplicitly(android.content.Context,android.content.Intent)&gt;">
+                <AccessPath Value="$r2" Type="android.content.Intent" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;android.content.Intent: java.lang.String package&gt;" Type="java.lang.String"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r3 = virtualinvoke $r2.&lt;android.content.pm.PackageManager: java.util.List queryBroadcastReceivers(android.content.Intent,int)&gt;($r1, 0)" Method="&lt;me.leolin.shortcutbadger.util.BroadcastHelper: java.util.List resolveBroadcast(android.content.Context,android.content.Intent)&gt;">
+                    <AccessPath Value="$r3" Type="java.util.List" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <Sink Statement="virtualinvoke $r2.&lt;java.io.OutputStream: void write(byte[],int,int)&gt;($r3, 0, $i0)" Method="&lt;de.appplant.cordova.plugin.notification.util.AssetUtil: void copyFile(java.io.InputStream,java.io.OutputStream)&gt;">
+                <AccessPath Value="$r3" Type="byte[]" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r9 = virtualinvoke $r6.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;de.appplant.cordova.plugin.notification.util.AssetUtil: android.net.Uri getUriFromRemote(java.lang.String)&gt;">
+                    <AccessPath Value="$r9" Type="java.io.InputStream" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+    </Results>
+    <PerformanceData>
+        <PerformanceEntry Name="CallgraphConstructionSeconds" Value="90"></PerformanceEntry>
+        <PerformanceEntry Name="TaintPropagationSeconds" Value="1870"></PerformanceEntry>
+        <PerformanceEntry Name="PathReconstructionSeconds" Value="37"></PerformanceEntry>
+        <PerformanceEntry Name="TotalRuntimeSeconds" Value="2006"></PerformanceEntry>
+        <PerformanceEntry Name="MaxMemoryConsumption" Value="185"></PerformanceEntry>
+        <PerformanceEntry Name="SourceCount" Value="26"></PerformanceEntry>
+        <PerformanceEntry Name="SinkCount" Value="179"></PerformanceEntry>
+    </PerformanceData>
+</DataFlowResults>

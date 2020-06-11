@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFlowResults FileFormatVersion="102" TerminationState="Success">
+    <Results>
+        <Result>
+            <Sink Statement="virtualinvoke $r19.&lt;java.io.OutputStream: void write(byte[])&gt;($r21)" Method="&lt;com.dynatrace.android.agent.comm.CommHandler: com.dynatrace.android.agent.comm.HttpResponse executeRequest(java.lang.String,java.lang.String,com.dynatrace.android.agent.comm.TimeSyncResponse,int)&gt;">
+                <AccessPath Value="$r19" Type="java.util.zip.GZIPOutputStream" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;java.io.OutputStream: byte[] innerArray&gt;" Type="byte[]"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = interfaceinvoke $r3.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i4)" Method="&lt;com.dynatrace.android.agent.db.DataAccessObject: com.dynatrace.android.agent.db.MonitoringDataEntity fetchEvents(long)&gt;">
+                    <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources>
+        </Result>
+        <Result>
+            <!-- <Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String)&gt;($r0, $r1)" Method="&lt;com.dynatrace.android.agent.util.Utility: void zlogD(java.lang.String,java.lang.String)&gt;">
+                <AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;java.lang.String: char[] content&gt;" Type="char[]"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = interfaceinvoke $r3.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i4)" Method="&lt;com.dynatrace.android.agent.db.DataAccessObject: com.dynatrace.android.agent.db.MonitoringDataEntity fetchEvents(long)&gt;">
+                    <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources> -->
+        </Result>
+        <Result>
+            <!-- <Sink Statement="$r3 = virtualinvoke $r4.&lt;java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)&gt;(&quot;__tsNow__&quot;, $r3)" Method="&lt;com.dynatrace.android.agent.comm.CommHandler: com.dynatrace.android.agent.comm.HttpResponse executeRequest(java.lang.String,java.lang.String,com.dynatrace.android.agent.comm.TimeSyncResponse,int)&gt;">
+                <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = interfaceinvoke $r3.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i4)" Method="&lt;com.dynatrace.android.agent.db.DataAccessObject: com.dynatrace.android.agent.db.MonitoringDataEntity fetchEvents(long)&gt;">
+                    <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources> -->
+        </Result>
+        <Result>
+            <!-- <Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String)&gt;($r0, $r3)" Method="&lt;com.dynatrace.android.agent.util.Utility: void zlogD(java.lang.String,java.lang.String)&gt;">
+                <AccessPath Value="$r3" Type="java.lang.String" TaintSubFields="true">
+                    <Fields>
+                        <Field Value="&lt;java.lang.String: char[] content&gt;" Type="char[]"></Field>
+                    </Fields>
+                </AccessPath>
+            </Sink>
+            <Sources>
+                <Source Statement="$r4 = interfaceinvoke $r3.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i4)" Method="&lt;com.dynatrace.android.agent.db.DataAccessObject: com.dynatrace.android.agent.db.MonitoringDataEntity fetchEvents(long)&gt;">
+                    <AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true"></AccessPath>
+                </Source>
+            </Sources> -->
+        </Result>
+    </Results>
+    <PerformanceData>
+        <PerformanceEntry Name="CallgraphConstructionSeconds" Value="17"></PerformanceEntry>
+        <PerformanceEntry Name="TaintPropagationSeconds" Value="1"></PerformanceEntry>
+        <PerformanceEntry Name="TotalRuntimeSeconds" Value="21"></PerformanceEntry>
+        <PerformanceEntry Name="MaxMemoryConsumption" Value="86"></PerformanceEntry>
+        <PerformanceEntry Name="SourceCount" Value="7"></PerformanceEntry>
+        <PerformanceEntry Name="SinkCount" Value="141"></PerformanceEntry>
+    </PerformanceData>
+</DataFlowResults>
